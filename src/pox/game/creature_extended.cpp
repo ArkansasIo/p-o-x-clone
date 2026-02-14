@@ -41,15 +41,35 @@ void Creature::apply_debuff(const Buff& debuff) {
     recalculate_stats();
 }
 
+
 void Creature::equip(const Equipment& item) {
     equipment.push_back(item);
+    // Assign to armor/shield slot if appropriate
+    if (item.type == EquipmentType::Armor) armor = &equipment.back();
+    if (item.type == EquipmentType::Shield) shield = &equipment.back();
     recalculate_stats();
 }
 
+
 void Creature::unequip(const Equipment& item) {
     auto it = std::find_if(equipment.begin(), equipment.end(), [&](const Equipment& eq) { return eq.name == item.name; });
-    if (it != equipment.end()) equipment.erase(it);
+    if (it != equipment.end()) {
+        if (armor == &(*it)) armor = nullptr;
+        if (shield == &(*it)) shield = nullptr;
+        equipment.erase(it);
+    }
     recalculate_stats();
+}
+
+void Creature::heal(int points) {
+    derived_stats[StatType::HP] += points;
+    // Optionally clamp to max HP
+}
+
+void Creature::use_healing_item(const Equipment& item) {
+    if (item.type == EquipmentType::HealingItem && item.heal_points > 0) {
+        heal(item.heal_points);
+    }
 }
 
 void Creature::recalculate_stats() {

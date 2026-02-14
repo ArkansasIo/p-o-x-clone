@@ -19,6 +19,7 @@ public:
 
 private:
     std::vector<CreatureRecord> slots_;
+    static constexpr size_t record_size = 36;
 };
 
 } // namespace game

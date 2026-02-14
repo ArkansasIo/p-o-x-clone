@@ -1,3 +1,4 @@
+#include "inventory.hpp"
 // Creature extended header
 #pragma once
 #include <string>
@@ -27,9 +28,20 @@ struct Buff {
     int value;
 };
 
+
+enum class EquipmentType {
+    Weapon,
+    Armor,
+    Shield,
+    Accessory,
+    HealingItem
+};
+
 struct Equipment {
     std::string name;
+    EquipmentType type;
     std::map<StatType, int> stat_modifiers;
+    int heal_points = 0; // For healing items
 };
 
 class Creature {
@@ -43,6 +55,8 @@ public:
     void apply_debuff(const Buff& debuff);
     void equip(const Equipment& item);
     void unequip(const Equipment& item);
+    void heal(int points);
+    void use_healing_item(const Equipment& item);
     void recalculate_stats();
 
     std::string name;
@@ -56,6 +70,9 @@ public:
     std::vector<Buff> buffs;
     std::vector<Buff> debuffs;
     std::vector<Equipment> equipment;
+    Equipment* armor = nullptr;
+    Equipment* shield = nullptr;
+    Inventory inventory;
 };
 
 class Monster : public Creature {

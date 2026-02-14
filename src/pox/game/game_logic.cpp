@@ -1,3 +1,27 @@
+void GameLogic::pickupItem(int creatureId, const Equipment& item) {
+    if (creatureId < 0 || creatureId >= creatures.size()) return;
+    creatures[creatureId].inventory.add_item(item);
+}
+
+bool GameLogic::equipFromInventory(int creatureId, const std::string& itemName) {
+    if (creatureId < 0 || creatureId >= creatures.size()) return false;
+    Equipment* item = creatures[creatureId].inventory.get_item(itemName);
+    if (!item) return false;
+    creatures[creatureId].equip(*item);
+    return true;
+}
+
+bool GameLogic::useHealingItemFromInventory(int creatureId, const std::string& itemName) {
+    if (creatureId < 0 || creatureId >= creatures.size()) return false;
+    Equipment* item = creatures[creatureId].inventory.get_item(itemName);
+    if (!item) return false;
+    if (item->type == EquipmentType::HealingItem && item->heal_points > 0) {
+        creatures[creatureId].use_healing_item(*item);
+        creatures[creatureId].inventory.remove_item(itemName);
+        return true;
+    }
+    return false;
+}
 // Main game logic implementation for RPG/MMORPG
 #include "game_logic.hpp"
 #include <iostream>
@@ -34,9 +58,25 @@ void GameLogic::handleCombat(int attackerId, int defenderId) {
     std::cout << creatures[attackerId].name << " attacks " << creatures[defenderId].name << " for " << damage << " damage!\n";
 }
 
+
 void GameLogic::equipItem(int creatureId, const Equipment& item) {
     if (creatureId < 0 || creatureId >= creatures.size()) return;
     creatures[creatureId].equip(item);
+}
+
+void GameLogic::equipArmor(int creatureId, const Equipment& armor) {
+    if (creatureId < 0 || creatureId >= creatures.size()) return;
+    if (armor.type == EquipmentType::Armor) creatures[creatureId].equip(armor);
+}
+
+void GameLogic::equipShield(int creatureId, const Equipment& shield) {
+    if (creatureId < 0 || creatureId >= creatures.size()) return;
+    if (shield.type == EquipmentType::Shield) creatures[creatureId].equip(shield);
+}
+
+void GameLogic::useHealingItem(int creatureId, const Equipment& item) {
+    if (creatureId < 0 || creatureId >= creatures.size()) return;
+    creatures[creatureId].use_healing_item(item);
 }
 
 void GameLogic::applyBuff(int creatureId, const Buff& buff) {

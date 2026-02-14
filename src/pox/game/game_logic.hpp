@@ -1,3 +1,7 @@
+    // Inventory and item management
+    void pickupItem(int creatureId, const Equipment& item);
+    bool equipFromInventory(int creatureId, const std::string& itemName);
+    bool useHealingItemFromInventory(int creatureId, const std::string& itemName);
 // Header for main game logic
 #pragma once
 #include <vector>
@@ -23,6 +27,9 @@ public:
     void spawnCreature(const std::string& name);
     void handleCombat(int attackerId, int defenderId);
     void equipItem(int creatureId, const Equipment& item);
+    void equipArmor(int creatureId, const Equipment& armor);
+    void equipShield(int creatureId, const Equipment& shield);
+    void useHealingItem(int creatureId, const Equipment& item);
     void applyBuff(int creatureId, const Buff& buff);
     void applyDebuff(int creatureId, const Buff& debuff);
     void updateBiome(const pox::world::Biome& biome);
