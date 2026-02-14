@@ -3,6 +3,9 @@
 #include "pox/sdl/ui_framework.hpp"
 #include "pox/game/game_logic.hpp"
 #include "pox/game/main_character.hpp"
+#include "pox/game/menu_text.hpp"
+#include "pox/game/zones.hpp"
+#include "pox/game/settings.hpp"
 #include <SDL.h>
 #include <iostream>
 
@@ -56,6 +59,24 @@ int main(int argc, char** argv) {
         SDL_Delay(16);
     }
 
+    // Initialize menu text system
+    pox::game::MenuTextSystem menuTextSys;
+    menuTextSys.add_zone({"Main Menu", { {"Start Game", true}, {"Options", true}, {"Exit", true} }]);
+    menuTextSys.add_zone({"Settings", { {"Audio", true}, {"Video", true}, {"Controls", true} }});
+    menuTextSys.set_zone(0);
+
+    // Initialize zone system
+    pox::game::ZoneSystem zoneSys;
+    zoneSys.add_zone({"Forest", "A lush green forest.", true});
+    zoneSys.add_zone({"Desert", "A hot sandy desert.", false});
+    zoneSys.add_zone({"Mountain", "A cold rocky mountain.", false});
+
+    // Initialize settings system
+    pox::game::SettingsSystem settingsSys;
+    settingsSys.set("volume", "80");
+    settingsSys.set("resolution", "640x480");
+    settingsSys.set("difficulty", "normal");
+
     // Game logic
     pox::game::GameLogic game;
     game.generateProceduralWorld();
@@ -69,13 +90,36 @@ int main(int argc, char** argv) {
         SDL_Event e;
         while (SDL_PollEvent(&e)) {
             if (e.type == SDL_QUIT) running = false;
-            // ...handle input, update game state...
+            // Example: handle menu navigation
+            if (e.type == SDL_KEYDOWN) {
+                if (e.key.keysym.scancode == SDL_SCANCODE_UP) {
+                    menuTextSys.set_option(menuTextSys.current_option - 1);
+                }
+                if (e.key.keysym.scancode == SDL_SCANCODE_DOWN) {
+                    menuTextSys.set_option(menuTextSys.current_option + 1);
+                }
+                if (e.key.keysym.scancode == SDL_SCANCODE_RETURN) {
+                    // Example: select menu option
+                    auto opt = menuTextSys.get_current_option();
+                    if (opt.label == "Start Game") {
+                        // Start gameplay
+                        zoneSys.set_zone(0); // Enter Forest
+                    }
+                    if (opt.label == "Options") {
+                        menuTextSys.set_zone(1); // Go to Settings
+                    }
+                    if (opt.label == "Exit") {
+                        running = false;
+                    }
+                }
+            }
         }
         game.tick();
-        // ...render, update GUI...
         SDL_SetRenderDrawColor(ren, 40, 40, 80, 255);
         SDL_RenderClear(ren);
-        // ...draw game state...
+        // Example: render menu text
+        auto zone = menuTextSys.get_current_zone();
+        // Render zone.title and options (stub)
         SDL_RenderPresent(ren);
         SDL_Delay(16);
     }
