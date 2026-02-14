@@ -3,6 +3,8 @@
 #include "sdl_video.hpp"
 #include "sdl_input.hpp"
 #include "sdl_audio.hpp"
+#include "pox/sdl/ui_framework.hpp"
+#include "pox/sdl/tile_ui.hpp"
 #include <SDL.h>
 #include <cstdio>
 

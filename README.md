@@ -1,70 +1,85 @@
-# PO-X (2001) Handheld Clone — Emulator Scaffold (C++20 + SDL2)
+# POX Clone - Modular RPG/MMORPG Framework
 
-This repository is a **hardware-emulation scaffold** for a PO-X–style handheld (circa 2001).
-It is intentionally designed to be **emulator-like and extensible**: once you confirm the real
-CPU/opcodes, memory map, LCD pipeline, and cartridge behavior, you can plug those details in
-without rewriting the architecture.
+## Overview
+POX Clone is a modular RPG/MMORPG engine featuring:
+- Creature, combat, and equipment frameworks
+- Biome, zone, counter, and condition systems
+- Procedural world generation
+- Survival mechanics and stat management
+- SDL2-based GUI and PI interface
+- CSV-driven data tables
+- Test-driven development
 
-## What you get (today)
+## Gameplay Loop Integration
+The main gameplay loop is managed by the `pox::game::GameLogic` class:
+- `tick()`: Advances the game state, handles creature survival, combat, and world events
+- `spawnCreature(name)`: Adds new creatures to the world
+- `handleCombat(attackerId, defenderId)`: Resolves combat between creatures
+- `equipItem(creatureId, item)`: Equips items and updates stats
+- `applyBuff`/`applyDebuff`: Applies buffs/debuffs to creatures
+- `updateBiome`/`updateZone`: Changes biome/zone context
+- `handleSurvivalCounters`: Manages survival stats and conditions
+- `generateProceduralWorld()`: Creates new world layouts
 
-- Deterministic core loop (Clock -> CPU -> Timer/Audio -> LCD render)
-- Memory-mapped IO through a Bus router
-- Cartridge ROM + SRAM + save persistence (`.sav`)
-- Trace buffer (instruction-level trace for debugging/diffing)
-- Debugger scaffold (breakpoints + watchpoints)
-- ROM container spec ("POXR") + packer tool
-- SDL2 desktop runner
+## Next Steps: Gameplay Loop Implementation
 
-> **Important:** CPU opcodes and memory map are placeholders by design.
+To further expand the gameplay loop, integrate the following in your main executable:
 
-## Build
+1. Instantiate `pox::game::GameLogic`.
+2. Call `tick()` in your main loop to advance game state.
+3. Use `spawnCreature`, `handleCombat`, `equipItem`, and other methods to drive gameplay.
+4. Connect GUI/PI interface for player input and display.
 
-### Dependencies
-- CMake 3.22+
-- C++20 compiler
-- SDL2 development package
+### Example Main Loop (C++)
 
-#### Windows/CMake: Setting up SDL2
-1. Download and extract the SDL2 development package (already included in this repo under `SDL2-devel-2.30.2-VC`).
-2. Set the `SDL2_DIR` environment variable to the full path of the SDL2 folder. For example:
-   - `D:/pox-clone/pox-clone/SDL2-devel-2.30.2-VC/SDL2-2.30.2`
-3. Ensure the `include` and `lib` folders are present inside this directory.
-4. Re-run CMake to configure the project.
+```cpp
+#include "pox/game/game_logic.hpp"
+#include <SDL.h>
 
-### Configure & compile
-```bash
-cmake -S . -B build
-cmake --build build -j
+int main(int argc, char* argv[]) {
+    pox::game::GameLogic game;
+    game.generateProceduralWorld();
+    game.spawnCreature("Hero");
+    game.spawnCreature("Monster");
+
+    bool running = true;
+    while (running) {
+        // Handle SDL events
+        SDL_Event event;
+        while (SDL_PollEvent(&event)) {
+            if (event.type == SDL_QUIT) running = false;
+            // ...handle input, update game state...
+        }
+        game.tick();
+        // ...render, update GUI...
+    }
+    return 0;
+}
 ```
 
-## Run
-```bash
-./build/apps/desktop_sdl/pox_desktop path/to/game.rom
-```
+## Feature Expansion
+- Modular creature system: Add new types, races, and abilities
+- Biome/zone/counter/condition: Expand environmental and survival logic
+- Equipment and buffs: Add new items, effects, and stat modifiers
+- Procedural world: Enhance generation algorithms and event systems
 
-Keyboard mapping (default):
-- Arrow keys: D-pad
-- Z: A
-- X: B
-- Enter: Start
-- Right Shift: Select
-- Esc: Quit
+## Testing
+- All features are covered by unit tests in `tests/`
+- Run tests with `build/tests/Debug/pox_tests.exe`
 
-## Tests
-```bash
-cmake -S . -B build
-cmake --build build -j
-./build/tests/pox_tests
-```
+## Build & Run
+1. Build with CMake tasks
+2. Run tests and main executable
 
-## Where to implement the real PO-X hardware
+## Contributing
+- Add new features via modular headers and source files
+- Expand CSV data tables for biomes, zones, counters, and conditions
+- Integrate new gameplay logic in `GameLogic`
 
-1) **CPU**: `src/pox/hw/cpu8.cpp`  
-2) **Memory map / IO registers**: `src/pox/core/bus.cpp`  
-3) **LCD pipeline**: `src/pox/hw/display.cpp`  
-4) **Timers / interrupts**: `src/pox/hw/timer.cpp` + CPU IRQ plumbing  
-5) **Cartridge banking / save**: `src/pox/hw/cartridge.cpp`
+## License
+See LICENSE for details.
 
-See `/docs` for architecture + placeholder specs.
+---
+For detailed architecture, see `docs/ARCHITECTURE.md` and related docs.
 
 
