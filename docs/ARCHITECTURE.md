@@ -1,3 +1,4 @@
+# Dev Credit: Stephen Deline Jr
 # Architecture (PO-X Clone Scaffold)
 
 ## Core principles

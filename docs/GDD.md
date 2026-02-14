@@ -1,3 +1,4 @@
+# Dev Credit: Stephen Deline Jr
 # Game Design Document (GDD) — PO-X Legacy Clone
 
 ## 1. Product Vision

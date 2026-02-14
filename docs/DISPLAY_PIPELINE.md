@@ -1,3 +1,4 @@
+# Dev Credit: Stephen Deline Jr
 # Display Pipeline (PLACEHOLDER)
 
 `Display::render_from_vram()` currently assumes:

@@ -1,3 +1,4 @@
+# Dev Credit: Stephen Deline Jr
 # Technical Design Document (TDD) — PO-X Legacy Clone
 
 ## 1. Goals

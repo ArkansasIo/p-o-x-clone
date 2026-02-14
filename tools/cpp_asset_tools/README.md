@@ -1,4 +1,5 @@
 # C++ Asset Tools for POX Game
+Dev Credit: Stephen Deline Jr
 
 This folder contains C++ stubs for asset processing tools:
 

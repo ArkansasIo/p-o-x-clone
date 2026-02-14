@@ -46,3 +46,4 @@
 - SAVE_STATES_REWIND.md — save states + rewind design
 - REVERSE_ENGINEERING.md — practical RE notes
 - HOMEBREW_SDK.md — SDK layout and workflow
+# Dev Credit: Stephen Deline Jr

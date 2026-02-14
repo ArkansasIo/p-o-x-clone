@@ -1,3 +1,4 @@
+# Dev Credit: Stephen Deline Jr
 # Audio Pipeline (PLACEHOLDER)
 
 `Audio` is a minimal square-wave generator.

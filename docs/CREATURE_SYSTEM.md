@@ -1,3 +1,4 @@
+# Dev Credit: Stephen Deline Jr
 # PO-X Creature System
 
 This document describes the 20-byte creature record format, SRAM slotting, CRC validation, and runtime logic for the PO-X clone project.

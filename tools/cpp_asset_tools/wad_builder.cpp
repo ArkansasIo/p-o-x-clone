@@ -1,4 +1,5 @@
 // WAD Builder (stub)
+// Dev Credit: Stephen Deline Jr
 #include <iostream>
 int main(int argc, char** argv) {
     std::cout << "WAD Builder (stub)\n";

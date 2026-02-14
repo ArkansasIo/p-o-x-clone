@@ -1,4 +1,5 @@
 // PNG Quantizer & 2bpp Exporter (stub)
+// Dev Credit: Stephen Deline Jr
 // Requires stb_image or similar for PNG loading
 #include <iostream>
 int main(int argc, char** argv) {

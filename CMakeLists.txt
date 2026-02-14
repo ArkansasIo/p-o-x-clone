@@ -50,3 +50,23 @@ add_subdirectory(tools/rom_packer)
 add_subdirectory(tools/sprite_converter)
 add_subdirectory(tools/audio_converter)
 add_subdirectory(tests)
+
+# Install asset folders from packs to build output
+install(DIRECTORY pox-combat-pack-v2/atlases DESTINATION ${CMAKE_BINARY_DIR}/assets/pox-combat-pack-v2/atlases)
+install(DIRECTORY pox-combat-pack-v2/sprites DESTINATION ${CMAKE_BINARY_DIR}/assets/pox-combat-pack-v2/sprites)
+install(FILES pox-combat-pack-v2/atlas_map.json pox-combat-pack-v2/manifest.json DESTINATION ${CMAKE_BINARY_DIR}/assets/pox-combat-pack-v2)
+
+install(DIRECTORY pox-master-library/atlases DESTINATION ${CMAKE_BINARY_DIR}/assets/pox-master-library/atlases)
+install(DIRECTORY pox-master-library/sprites DESTINATION ${CMAKE_BINARY_DIR}/assets/pox-master-library/sprites)
+install(FILES pox-master-library/atlas_map.json pox-master-library/manifest.json DESTINATION ${CMAKE_BINARY_DIR}/assets/pox-master-library)
+
+install(DIRECTORY pox-ultimate-production-pack/atlases DESTINATION ${CMAKE_BINARY_DIR}/assets/pox-ultimate-production-pack/atlases)
+install(DIRECTORY pox-ultimate-production-pack/sprites DESTINATION ${CMAKE_BINARY_DIR}/assets/pox-ultimate-production-pack/sprites)
+install(FILES pox-ultimate-production-pack/atlas_map.json pox-ultimate-production-pack/manifest.json DESTINATION ${CMAKE_BINARY_DIR}/assets/pox-ultimate-production-pack)
+
+install(DIRECTORY pox-final-cartridge-system/assets DESTINATION ${CMAKE_BINARY_DIR}/assets/pox-final-cartridge-system/assets)
+install(DIRECTORY pox-final-cartridge-system/docs DESTINATION ${CMAKE_BINARY_DIR}/assets/pox-final-cartridge-system/docs)
+install(DIRECTORY pox-final-cartridge-system/examples DESTINATION ${CMAKE_BINARY_DIR}/assets/pox-final-cartridge-system/examples)
+install(DIRECTORY pox-final-cartridge-system/scripts DESTINATION ${CMAKE_BINARY_DIR}/assets/pox-final-cartridge-system/scripts)
+install(DIRECTORY pox-final-cartridge-system/tools DESTINATION ${CMAKE_BINARY_DIR}/assets/pox-final-cartridge-system/tools)
+install(FILES pox-final-cartridge-system/README.md DESTINATION ${CMAKE_BINARY_DIR}/assets/pox-final-cartridge-system)
