@@ -30,6 +30,7 @@ add_library(pox_core
   src/pox/util/fileio.cpp
 
   src/pox/game/creature_db.cpp
+  src/pox/game/crc16.cpp
   src/pox/game/creature_record.cpp
   src/pox/game/creature_runtime.cpp
   src/pox/game/wad_resources.cpp

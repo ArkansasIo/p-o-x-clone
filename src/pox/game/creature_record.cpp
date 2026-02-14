@@ -1,6 +1,15 @@
+#ifdef vector
+#undef vector
+#endif
+#ifdef string
+#undef string
+#endif
 #include "pox/game/creature_record.hpp"
+
 #include "pox/game/crc16.hpp"
 #include <cstring>
+#include <vector>
+#include <string>
 
 namespace pox::game {
 

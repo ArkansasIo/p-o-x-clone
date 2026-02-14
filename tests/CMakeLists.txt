@@ -1,7 +1,7 @@
 
+
 enable_testing()
 add_executable(pox_tests
-  main.cpp
   test_bitops.cpp
   test_checksum.cpp
   test_rom_container.cpp

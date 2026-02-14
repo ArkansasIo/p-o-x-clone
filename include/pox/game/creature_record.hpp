@@ -1,10 +1,20 @@
 #ifdef name
 #undef name
 #endif
+#ifdef fix_crc
+#undef fix_crc
+#endif
+#ifdef vector
+#undef vector
+#endif
+#ifdef string
+#undef string
+#endif
 #pragma once
 #include <cstdint>
 #include <array>
 #include <string>
+#include <vector>
 
 namespace pox::game {
 
