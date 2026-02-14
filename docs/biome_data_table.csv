@@ -1,0 +1,9 @@
+# Biome, Zone, Counter, and Condition Data Table
+# Example CSV for procedural generation or engine integration
+biome,type,temperature,hazards,resources,enemy_types,status_effects
+Enchanted Forest,Forest,temperate,"poison;ambush","wood;herbs","wolf;sprite","poisoned"
+Sandy Desert,Desert,extreme_heat,"heat;sandstorm","cactus;quartz","scorpion;sand_worm","heatstroke"
+Ice Shelf,Tundra,cold,"frost;slippery","ice;fur","polar_bear;frost_spirit","frostbite"
+Lava Fields,Volcanic,extreme_heat,"lava;toxic_ash","obsidian;sulfur","fire_elemental;lava_beast","burning;toxic_lung"
+Coral Reef,Aquatic,mild,"swimming;oxygen","coral;pearl","shark;eel","dehydration"
+Alpine Peaks,Mountain,cold,"altitude;fall","ore;crystal","griffin;mountain_goat","fatigue"

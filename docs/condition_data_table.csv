@@ -1,0 +1,20 @@
+# Condition Data Table
+condition,type,effect,duration
+Hypothermia,Hypothermia,"Severe cold, HP loss",60
+Frostbite,Frostbite,"Cold, movement penalty",30
+Heatstroke,Heatstroke,"Heat, stamina drain",45
+Dehydration,Dehydration,"Water loss, HP drain",40
+Poisoned,Poisoned,"Poison, HP loss",50
+Diseased,Diseased,"Disease, stat reduction",90
+Radiation Sickness,RadiationSickness,"Radiation, HP loss",80
+Toxic Lung,ToxicLung,"Toxic air, stamina loss",70
+Fear,Fear,"Mental, accuracy penalty",20
+Madness,Madness,"Mental, random actions",100
+Confusion,Confusion,"Mental, control loss",25
+Hallucination,Hallucination,"Mental, visual distortion",15
+Cursed,Cursed,"Magic, stat reduction",60
+Mana Burn,ManaBurn,"Magic, MP loss",35
+Soul Drain,SoulDrain,"Magic, HP/MP loss",50
+Temporal Distortion,TemporalDistortion,"Magic, time effects",10
+Burning,Burning,"Fire, HP loss",20
+Crushing Depth,CrushingDepth,"Pressure, instant KO",5

@@ -12,6 +12,14 @@ int main() {
   fails += test_rom_container();
   fails += test_cpu_decode_smoke();
 
+  // New feature tests
+  extern int test_creature_extended();
+  extern int test_biome_framework();
+  extern int test_csv_data();
+  fails += test_creature_extended();
+  fails += test_biome_framework();
+  fails += test_csv_data();
+
   if (fails == 0) {
     std::printf("All tests passed.\n");
     return 0;

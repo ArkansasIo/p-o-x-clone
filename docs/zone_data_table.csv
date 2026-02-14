@@ -1,0 +1,7 @@
+# Zone Data Table
+zone,type,rules,events
+Town,Safe,"PvP disabled;fast travel enabled;healing regen boost","market;festival"
+Wilderness,Adventure,"PvE combat;standard loot;dynamic events","quest;resource_gathering"
+Corrupted Lands,Danger,"high difficulty;rare drops;hazard debuffs","invasion;curse_event"
+Arena,PvP,"open PvP;rank gains;territory control","battle;tournament"
+Raid Tower,Dungeon,"party required;boss mechanics;loot lockouts","boss_fight;trial"

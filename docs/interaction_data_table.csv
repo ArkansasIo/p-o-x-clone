@@ -1,0 +1,9 @@
+# Biome-Counter-Condition Interaction Data Table
+biome,counter,condition
+Desert,Temperature,Heatstroke
+Tundra,Temperature,Frostbite
+Swamp,Toxicity,Poisoned
+Volcanic,Temperature,Burning
+Aquatic,Oxygen,Dehydration
+Mountain,Fatigue,Hypothermia
+Corrupted,Corruption,Madness

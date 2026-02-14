@@ -1,0 +1,13 @@
+# Counter Data Table
+counter,type,value,max,description
+Temperature,Temperature,0,100,Heat/cold exposure
+Hydration,Hydration,100,100,Dehydration mechanics
+Oxygen,Oxygen,100,100,Underwater & altitude
+Fatigue,Fatigue,0,100,Stamina regeneration
+Radiation,Radiation,0,100,Sci-fi zones
+Toxicity,Toxicity,0,100,Poison gas areas
+Sanity,Sanity,100,100,Horror/dark zones
+Hunger,Hunger,100,100,Survival gameplay
+Pressure,Pressure,0,100,Deep ocean
+MagicSaturation,MagicSaturation,0,100,Magic exposure
+Corruption,Corruption,0,100,Corrupted lands
