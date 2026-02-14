@@ -1,0 +1,4 @@
+#pragma once
+#define POX_CLONE_VERSION_MAJOR 0
+#define POX_CLONE_VERSION_MINOR 2
+#define POX_CLONE_VERSION_PATCH 0

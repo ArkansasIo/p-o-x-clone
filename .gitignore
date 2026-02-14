@@ -1,0 +1,11 @@
+build/
+out/
+*.user
+*.suo
+*.vcxproj*
+*.idea/
+*.vscode/
+*.DS_Store
+*.log
+*.sav
+saves/
