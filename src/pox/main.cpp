@@ -6,6 +6,8 @@
 #include "pox/game/menu_text.hpp"
 #include "pox/game/zones.hpp"
 #include "pox/game/settings.hpp"
+#include "pox/game/kingdoms.hpp"
+#include "pox/game/continents.hpp"
 #include <SDL.h>
 #include <iostream>
 
@@ -76,6 +78,14 @@ int main(int argc, char** argv) {
     settingsSys.set("volume", "80");
     settingsSys.set("resolution", "640x480");
     settingsSys.set("difficulty", "normal");
+
+    // Initialize world map (countries and continents)
+    pox::game::WorldMap worldMap;
+    worldMap.initialize();
+
+    // Initialize kingdoms
+    pox::game::KingdomSystem kingdomSys;
+    initialize_kingdoms(kingdomSys);
 
     // Game logic
     pox::game::GameLogic game;
