@@ -29,6 +29,11 @@ add_library(pox_core
   src/pox/util/serialize.cpp
   src/pox/util/fileio.cpp
 
+  src/pox/game/creature_db.cpp
+  src/pox/game/creature_record.cpp
+  src/pox/game/creature_runtime.cpp
+  src/pox/game/wad_resources.cpp
+
   src/pox/debug/trace.cpp
   src/pox/debug/debugger.cpp
   src/pox/debug/disasm.cpp

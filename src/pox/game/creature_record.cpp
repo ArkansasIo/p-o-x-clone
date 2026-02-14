@@ -42,7 +42,7 @@ CreatureRecord CreatureRecord::deserialize(const std::array<uint8_t, 20>& data) 
     return rec;
 }
 
-std::string CreatureRecord::name(const std::vector<std::string>& wad_chars) const {
+std::string CreatureRecord::get_name(const std::vector<std::string>& wad_chars) const {
     std::string n;
     for (auto idx : name_indices) {
         if (idx < wad_chars.size()) n += wad_chars[idx];

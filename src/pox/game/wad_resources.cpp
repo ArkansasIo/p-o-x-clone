@@ -1,6 +1,6 @@
 #include "pox/game/wad_resources.hpp"
 #include <fstream>
-#include <nlohmann/json.hpp>
+#include "nlohmann/json.hpp"
 
 namespace pox::game {
 

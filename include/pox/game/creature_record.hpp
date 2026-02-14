@@ -1,3 +1,6 @@
+#ifdef name
+#undef name
+#endif
 #pragma once
 #include <cstdint>
 #include <array>
@@ -18,7 +21,7 @@ struct CreatureRecord {
     void fix_crc();
     std::array<uint8_t, 20> serialize() const;
     static CreatureRecord deserialize(const std::array<uint8_t, 20>& data);
-    std::string name(const std::vector<std::string>& wad_chars) const;
+    std::string get_name(const std::vector<std::string>& wad_chars) const;
 };
 
 } // namespace pox::game
