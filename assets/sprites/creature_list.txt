@@ -1,0 +1,84 @@
+# POX Clone Sprite and Creature List
+
+## Sprite Creatures
+- Hero
+- Monster
+- Animal
+- Dragon
+- Goblin
+- Elf
+- Orc
+- Undead
+- Beastman
+- Demon
+- Angel
+- Construct
+- Elemental
+- Plant
+- Insect
+- Machine
+- Fire Creature
+- Water Creature
+- Earth Creature
+- Air Creature
+- Magic Creature
+- Zombie
+- Skeleton
+- Vampire
+- Werewolf
+- Fairy
+- Giant
+- Troll
+- Slime
+- Bat
+- Bird
+- Fish
+- Wolf
+- Bear
+- Cat
+- Dog
+- Mouse
+- Snake
+- Spider
+- Turtle
+- Crab
+- Frog
+- Horse
+- Cow
+- Pig
+- Chicken
+- Rabbit
+- Deer
+- Fox
+- Lion
+- Tiger
+- Elephant
+- Rhino
+- Crocodile
+- Shark
+- Dolphin
+- Whale
+- Octopus
+- Jellyfish
+- Bee
+- Ant
+- Butterfly
+- Moth
+- Beetle
+- Grasshopper
+- Locust
+- Dragonfly
+- Ladybug
+- Firefly
+- Centipede
+- Millipede
+- Scorpion
+- Snail
+- Clam
+- Starfish
+- Coral
+- Crystal Creature
+- Corrupted Creature
+
+---
+Add sprite PNGs for each creature in assets/skins/ or assets/sprites/.

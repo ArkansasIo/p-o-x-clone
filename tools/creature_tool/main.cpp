@@ -1,4 +1,5 @@
 #include "pox/game/creature_record.hpp"
+#include "creature_tool.hpp"
 #include <iostream>
 #include <fstream>
 #include <array>
@@ -6,6 +7,12 @@
 using namespace pox::game;
 
 int main(int argc, char** argv) {
+    pox_tool::CreatureTool tool;
+    // Example usage
+    tool.addCreature(pox::game::Creature("Sample", pox::game::Creature::Type::Humanoid, pox::game::Creature::SubType::None, pox::game::Creature::Race::Human));
+    tool.save("creatures.dat");
+    tool.load("creatures.dat");
+
     if (argc < 3) {
         std::cout << "Usage: pox_creature_tool <cmd> <file>\n";
         std::cout << "Commands: dump, validate, fixcrc\n";

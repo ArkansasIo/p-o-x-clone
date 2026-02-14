@@ -2,6 +2,7 @@
 #include "pox/sdl/tile_ui.hpp"
 #include "pox/sdl/ui_framework.hpp"
 #include "pox/game/game_logic.hpp"
+#include "pox/game/main_character.hpp"
 #include <SDL.h>
 #include <iostream>
 
@@ -60,6 +61,9 @@ int main(int argc, char** argv) {
     game.generateProceduralWorld();
     game.spawnCreature("Hero");
     game.spawnCreature("Monster");
+    pox::game::MainCharacter player;
+    player.setName("POX");
+    game.addPlayer(player);
     bool running = true;
     while (running) {
         SDL_Event e;
