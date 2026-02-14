@@ -8,6 +8,10 @@
 #include "pox/game/settings.hpp"
 #include "pox/game/kingdoms.hpp"
 #include "pox/game/continents.hpp"
+#include "pox/game/rpg_systems.hpp"
+#include "pox/ui/menu_renderer.hpp"
+#include "pox/ui/zone_renderer.hpp"
+#include "pox/ui/settings_renderer.hpp"
 #include <SDL.h>
 #include <iostream>
 
@@ -24,83 +28,34 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    // Splash logo screen
-    pox_sdl::SplashLogoScreen splash;
-    splash.show(ren);
-
-    // Tile page for mode selection
-    pox_sdl::TilePage tiles({"Adventure", "Survival", "Sandbox", "Settings"});
-    bool inTiles = true;
-    while (inTiles) {
-        SDL_Event e;
-        while (SDL_PollEvent(&e)) {
-            if (e.type == SDL_QUIT) inTiles = false;
-            tiles.handleInput(e);
-            if (e.type == SDL_KEYDOWN && e.key.keysym.scancode == SDL_SCANCODE_RETURN) {
-                inTiles = false;
-            }
-        }
-        tiles.show(ren);
-        SDL_Delay(16);
-    }
-
-    // Main menu
-    pox_sdl::MainMenu menu;
-    bool inMenu = true;
-    while (inMenu) {
-        SDL_Event e;
-        while (SDL_PollEvent(&e)) {
-            if (e.type == SDL_QUIT) inMenu = false;
-            menu.handleInput(e);
-            if (e.type == SDL_KEYDOWN && e.key.keysym.scancode == SDL_SCANCODE_RETURN) {
-                if (menu.selected == 0) inMenu = false; // Start Game
-                if (menu.selected == 3) inMenu = false; // Exit
-            }
-        }
-        menu.show(ren);
-        SDL_Delay(16);
-    }
-
-    // Initialize menu text system
+    // Initialize all systems
     pox::game::MenuTextSystem menuTextSys;
-    menuTextSys.add_zone({"Main Menu", { {"Start Game", true}, {"Options", true}, {"Exit", true} }]);
+    menuTextSys.add_zone({"Main Menu", { {"Start Game", true}, {"Options", true}, {"Exit", true} }});
     menuTextSys.add_zone({"Settings", { {"Audio", true}, {"Video", true}, {"Controls", true} }});
     menuTextSys.set_zone(0);
 
-    // Initialize zone system
     pox::game::ZoneSystem zoneSys;
-    zoneSys.add_zone({"Forest", "A lush green forest.", true});
-    zoneSys.add_zone({"Desert", "A hot sandy desert.", false});
-    zoneSys.add_zone({"Mountain", "A cold rocky mountain.", false});
-
-    // Initialize settings system
+    pox::game::KingdomSystem kingdomSys;
+    initialize_kingdoms(kingdomSys);
+    pox::game::WorldMap worldMap;
+    worldMap.initialize();
     pox::game::SettingsSystem settingsSys;
     settingsSys.set("volume", "80");
     settingsSys.set("resolution", "640x480");
     settingsSys.set("difficulty", "normal");
+    pox::game::RPGSystems rpgSys;
+    rpgSys.initialize();
 
-    // Initialize world map (countries and continents)
-    pox::game::WorldMap worldMap;
-    worldMap.initialize();
+    // UI renderers
+    pox::ui::MenuRenderer menuRenderer(ren);
+    pox::ui::ZoneRenderer zoneRenderer(ren);
+    pox::ui::SettingsRenderer settingsRenderer(ren);
 
-    // Initialize kingdoms
-    pox::game::KingdomSystem kingdomSys;
-    initialize_kingdoms(kingdomSys);
-
-    // Game logic
-    pox::game::GameLogic game;
-    game.generateProceduralWorld();
-    game.spawnCreature("Hero");
-    game.spawnCreature("Monster");
-    pox::game::MainCharacter player;
-    player.setName("POX");
-    game.addPlayer(player);
     bool running = true;
     while (running) {
         SDL_Event e;
         while (SDL_PollEvent(&e)) {
             if (e.type == SDL_QUIT) running = false;
-            // Example: handle menu navigation
             if (e.type == SDL_KEYDOWN) {
                 if (e.key.keysym.scancode == SDL_SCANCODE_UP) {
                     menuTextSys.set_option(menuTextSys.current_option - 1);
@@ -109,14 +64,12 @@ int main(int argc, char** argv) {
                     menuTextSys.set_option(menuTextSys.current_option + 1);
                 }
                 if (e.key.keysym.scancode == SDL_SCANCODE_RETURN) {
-                    // Example: select menu option
                     auto opt = menuTextSys.get_current_option();
                     if (opt.label == "Start Game") {
-                        // Start gameplay
-                        zoneSys.set_zone(0); // Enter Forest
+                        zoneSys.set_zone(0);
                     }
                     if (opt.label == "Options") {
-                        menuTextSys.set_zone(1); // Go to Settings
+                        menuTextSys.set_zone(1);
                     }
                     if (opt.label == "Exit") {
                         running = false;
@@ -124,12 +77,11 @@ int main(int argc, char** argv) {
                 }
             }
         }
-        game.tick();
         SDL_SetRenderDrawColor(ren, 40, 40, 80, 255);
         SDL_RenderClear(ren);
-        // Example: render menu text
-        auto zone = menuTextSys.get_current_zone();
-        // Render zone.title and options (stub)
+        menuRenderer.render(menuTextSys, 20, 20);
+        zoneRenderer.render(zoneSys, 340, 20);
+        settingsRenderer.render(settingsSys, 20, 300);
         SDL_RenderPresent(ren);
         SDL_Delay(16);
     }
