@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "rom": "roms/main.poxr",
+  "wad": "wad/assets.wad",
+  "sram": "sram/save.sram",
+  "metadata": "metadata.json",
+  "output": "cartridge.poxc"
+}

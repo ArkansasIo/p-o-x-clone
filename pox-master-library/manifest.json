@@ -1,0 +1,716 @@
+[
+  {
+    "name": "tile_grass",
+    "file": "sprites/tile_grass.png",
+    "w": 8,
+    "h": 8,
+    "category": "tile"
+  },
+  {
+    "name": "tile_wall",
+    "file": "sprites/tile_wall.png",
+    "w": 8,
+    "h": 8,
+    "category": "tile"
+  },
+  {
+    "name": "tile_water",
+    "file": "sprites/tile_water.png",
+    "w": 8,
+    "h": 8,
+    "category": "tile"
+  },
+  {
+    "name": "enemy_00_idle_0",
+    "file": "sprites/enemy_00_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_00_idle_1",
+    "file": "sprites/enemy_00_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_01_idle_0",
+    "file": "sprites/enemy_01_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_01_idle_1",
+    "file": "sprites/enemy_01_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_02_idle_0",
+    "file": "sprites/enemy_02_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_02_idle_1",
+    "file": "sprites/enemy_02_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_03_idle_0",
+    "file": "sprites/enemy_03_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_03_idle_1",
+    "file": "sprites/enemy_03_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_04_idle_0",
+    "file": "sprites/enemy_04_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_04_idle_1",
+    "file": "sprites/enemy_04_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_05_idle_0",
+    "file": "sprites/enemy_05_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_05_idle_1",
+    "file": "sprites/enemy_05_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_06_idle_0",
+    "file": "sprites/enemy_06_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_06_idle_1",
+    "file": "sprites/enemy_06_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_07_idle_0",
+    "file": "sprites/enemy_07_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_07_idle_1",
+    "file": "sprites/enemy_07_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_08_idle_0",
+    "file": "sprites/enemy_08_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_08_idle_1",
+    "file": "sprites/enemy_08_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_09_idle_0",
+    "file": "sprites/enemy_09_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_09_idle_1",
+    "file": "sprites/enemy_09_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_10_idle_0",
+    "file": "sprites/enemy_10_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_10_idle_1",
+    "file": "sprites/enemy_10_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_11_idle_0",
+    "file": "sprites/enemy_11_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_11_idle_1",
+    "file": "sprites/enemy_11_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_12_idle_0",
+    "file": "sprites/enemy_12_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_12_idle_1",
+    "file": "sprites/enemy_12_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_13_idle_0",
+    "file": "sprites/enemy_13_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_13_idle_1",
+    "file": "sprites/enemy_13_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_14_idle_0",
+    "file": "sprites/enemy_14_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_14_idle_1",
+    "file": "sprites/enemy_14_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_15_idle_0",
+    "file": "sprites/enemy_15_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_15_idle_1",
+    "file": "sprites/enemy_15_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_16_idle_0",
+    "file": "sprites/enemy_16_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_16_idle_1",
+    "file": "sprites/enemy_16_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_17_idle_0",
+    "file": "sprites/enemy_17_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_17_idle_1",
+    "file": "sprites/enemy_17_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_18_idle_0",
+    "file": "sprites/enemy_18_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_18_idle_1",
+    "file": "sprites/enemy_18_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_19_idle_0",
+    "file": "sprites/enemy_19_idle_0.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_19_idle_1",
+    "file": "sprites/enemy_19_idle_1.png",
+    "w": 24,
+    "h": 40,
+    "category": "enemy"
+  },
+  {
+    "name": "item_00",
+    "file": "sprites/item_00.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_01",
+    "file": "sprites/item_01.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_02",
+    "file": "sprites/item_02.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_03",
+    "file": "sprites/item_03.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_04",
+    "file": "sprites/item_04.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_05",
+    "file": "sprites/item_05.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_06",
+    "file": "sprites/item_06.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_07",
+    "file": "sprites/item_07.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_08",
+    "file": "sprites/item_08.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_09",
+    "file": "sprites/item_09.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_10",
+    "file": "sprites/item_10.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_11",
+    "file": "sprites/item_11.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_12",
+    "file": "sprites/item_12.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_13",
+    "file": "sprites/item_13.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_14",
+    "file": "sprites/item_14.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_15",
+    "file": "sprites/item_15.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_16",
+    "file": "sprites/item_16.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_17",
+    "file": "sprites/item_17.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_18",
+    "file": "sprites/item_18.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_19",
+    "file": "sprites/item_19.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_20",
+    "file": "sprites/item_20.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_21",
+    "file": "sprites/item_21.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_22",
+    "file": "sprites/item_22.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_23",
+    "file": "sprites/item_23.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_24",
+    "file": "sprites/item_24.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_25",
+    "file": "sprites/item_25.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_26",
+    "file": "sprites/item_26.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_27",
+    "file": "sprites/item_27.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_28",
+    "file": "sprites/item_28.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_29",
+    "file": "sprites/item_29.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_30",
+    "file": "sprites/item_30.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_31",
+    "file": "sprites/item_31.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_32",
+    "file": "sprites/item_32.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_33",
+    "file": "sprites/item_33.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_34",
+    "file": "sprites/item_34.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_35",
+    "file": "sprites/item_35.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_36",
+    "file": "sprites/item_36.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_37",
+    "file": "sprites/item_37.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_38",
+    "file": "sprites/item_38.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_39",
+    "file": "sprites/item_39.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_40",
+    "file": "sprites/item_40.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_41",
+    "file": "sprites/item_41.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_42",
+    "file": "sprites/item_42.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_43",
+    "file": "sprites/item_43.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_44",
+    "file": "sprites/item_44.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_45",
+    "file": "sprites/item_45.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_46",
+    "file": "sprites/item_46.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_47",
+    "file": "sprites/item_47.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_48",
+    "file": "sprites/item_48.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "item_49",
+    "file": "sprites/item_49.png",
+    "w": 16,
+    "h": 16,
+    "category": "item"
+  },
+  {
+    "name": "player_walk_0",
+    "file": "sprites/player_walk_0.png",
+    "w": 16,
+    "h": 24,
+    "category": "player"
+  },
+  {
+    "name": "player_walk_1",
+    "file": "sprites/player_walk_1.png",
+    "w": 16,
+    "h": 24,
+    "category": "player"
+  },
+  {
+    "name": "player_walk_2",
+    "file": "sprites/player_walk_2.png",
+    "w": 16,
+    "h": 24,
+    "category": "player"
+  },
+  {
+    "name": "player_walk_3",
+    "file": "sprites/player_walk_3.png",
+    "w": 16,
+    "h": 24,
+    "category": "player"
+  },
+  {
+    "name": "screen_main_menu",
+    "file": "sprites/screen_main_menu.png",
+    "w": 128,
+    "h": 64,
+    "category": "layout"
+  },
+  {
+    "name": "screen_inventory",
+    "file": "sprites/screen_inventory.png",
+    "w": 128,
+    "h": 64,
+    "category": "layout"
+  },
+  {
+    "name": "screen_stats",
+    "file": "sprites/screen_stats.png",
+    "w": 128,
+    "h": 64,
+    "category": "layout"
+  },
+  {
+    "name": "screen_battle",
+    "file": "sprites/screen_battle.png",
+    "w": 128,
+    "h": 64,
+    "category": "layout"
+  },
+  {
+    "name": "screen_save_screen",
+    "file": "sprites/screen_save_screen.png",
+    "w": 128,
+    "h": 64,
+    "category": "layout"
+  }
+]

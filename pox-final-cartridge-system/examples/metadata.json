@@ -1,0 +1,27 @@
+{
+  "game": "POX Clone Cartridge",
+  "lcd": {
+    "resolution": "128x64",
+    "bpp": 2,
+    "palette": "4-shade"
+  },
+  "wad": {
+    "magic": "PWAD",
+    "lumps": [
+      "META",
+      "IMG2BPP",
+      "TILES2BP",
+      "SFX1",
+      "BOOT"
+    ]
+  },
+  "sram": {
+    "slotSize": 20,
+    "slots": 8,
+    "crc": "CRC16/IBM"
+  },
+  "cartridge": {
+    "magic": "POXC",
+    "version": 1
+  }
+}

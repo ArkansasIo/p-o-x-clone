@@ -1,0 +1,170 @@
+[
+  {
+    "name": "font_H",
+    "file": "sprites/font_H.png",
+    "w": 10,
+    "h": 14,
+    "category": "font"
+  },
+  {
+    "name": "font_I",
+    "file": "sprites/font_I.png",
+    "w": 10,
+    "h": 14,
+    "category": "font"
+  },
+  {
+    "name": "font_T",
+    "file": "sprites/font_T.png",
+    "w": 10,
+    "h": 14,
+    "category": "font"
+  },
+  {
+    "name": "font_D",
+    "file": "sprites/font_D.png",
+    "w": 10,
+    "h": 14,
+    "category": "font"
+  },
+  {
+    "name": "font_A",
+    "file": "sprites/font_A.png",
+    "w": 10,
+    "h": 14,
+    "category": "font"
+  },
+  {
+    "name": "font_M",
+    "file": "sprites/font_M.png",
+    "w": 10,
+    "h": 14,
+    "category": "font"
+  },
+  {
+    "name": "font_G",
+    "file": "sprites/font_G.png",
+    "w": 10,
+    "h": 14,
+    "category": "font"
+  },
+  {
+    "name": "font_E",
+    "file": "sprites/font_E.png",
+    "w": 10,
+    "h": 14,
+    "category": "font"
+  },
+  {
+    "name": "font_R",
+    "file": "sprites/font_R.png",
+    "w": 10,
+    "h": 14,
+    "category": "font"
+  },
+  {
+    "name": "font_0",
+    "file": "sprites/font_0.png",
+    "w": 10,
+    "h": 14,
+    "category": "font"
+  },
+  {
+    "name": "font_1",
+    "file": "sprites/font_1.png",
+    "w": 10,
+    "h": 14,
+    "category": "font"
+  },
+  {
+    "name": "font_2",
+    "file": "sprites/font_2.png",
+    "w": 10,
+    "h": 14,
+    "category": "font"
+  },
+  {
+    "name": "font_3",
+    "file": "sprites/font_3.png",
+    "w": 10,
+    "h": 14,
+    "category": "font"
+  },
+  {
+    "name": "ui_hp_bar_full",
+    "file": "sprites/ui_hp_bar_full.png",
+    "w": 64,
+    "h": 8,
+    "category": "ui"
+  },
+  {
+    "name": "ui_hp_bar_empty",
+    "file": "sprites/ui_hp_bar_empty.png",
+    "w": 64,
+    "h": 8,
+    "category": "ui"
+  },
+  {
+    "name": "ui_damage_popup",
+    "file": "sprites/ui_damage_popup.png",
+    "w": 32,
+    "h": 16,
+    "category": "ui"
+  },
+  {
+    "name": "ui_status_dot_1",
+    "file": "sprites/ui_status_dot_1.png",
+    "w": 8,
+    "h": 8,
+    "category": "ui"
+  },
+  {
+    "name": "ui_status_dot_2",
+    "file": "sprites/ui_status_dot_2.png",
+    "w": 8,
+    "h": 8,
+    "category": "ui"
+  },
+  {
+    "name": "ui_status_dot_3",
+    "file": "sprites/ui_status_dot_3.png",
+    "w": 8,
+    "h": 8,
+    "category": "ui"
+  },
+  {
+    "name": "enemy_brutyl_idle",
+    "file": "sprites/enemy_brutyl_idle.png",
+    "w": 32,
+    "h": 56,
+    "category": "enemy"
+  },
+  {
+    "name": "enemy_brutyl_hit",
+    "file": "sprites/enemy_brutyl_hit.png",
+    "w": 32,
+    "h": 56,
+    "category": "enemy"
+  },
+  {
+    "name": "fx_slash",
+    "file": "sprites/fx_slash.png",
+    "w": 32,
+    "h": 16,
+    "category": "fx"
+  },
+  {
+    "name": "fx_flash",
+    "file": "sprites/fx_flash.png",
+    "w": 32,
+    "h": 32,
+    "category": "fx"
+  },
+  {
+    "name": "screen_combat_layout_128x64",
+    "file": "sprites/screen_combat_layout_128x64.png",
+    "w": 128,
+    "h": 64,
+    "category": "layout"
+  }
+]
