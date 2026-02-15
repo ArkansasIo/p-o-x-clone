@@ -1,3 +1,8 @@
+
+# POX Clone Game Design Document (GDD)
+
+This document outlines the vision, user stories, features, and roadmap for the PO-X Legacy Clone project. Use it as a reference for design and development decisions.
+
 # Dev Credit: Stephen Deline Jr
 # Game Design Document (GDD) — PO-X Legacy Clone
 
@@ -54,8 +59,10 @@ PO-X Legacy Clone is a preservation-focused handheld recreation platform:
   - Sound test
   - Mini game (collect items)
 
-## 8. Roadmap
-- v0.x: scaffold + tools + docs + demo ISA
-- v1.0: real CPU ISA + real memory map + correct LCD/audio
-- v1.1: save states + rewind + GUI debugger
-- v2.0: embedded handheld build + optional FPGA plan
+
+## How to Use This Document
+- Reference the product vision and user stories when proposing new features or changes.
+- Use the roadmap to track project milestones and future plans.
+
+## Contributing to the GDD
+To suggest changes or additions, please update this document and submit a pull request with your rationale.

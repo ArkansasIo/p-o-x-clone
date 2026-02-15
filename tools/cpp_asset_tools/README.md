@@ -14,4 +14,14 @@ To implement:
 - Standard C++ for file I/O and binary packing
 - Add Bayer dithering, CRC16/IBM, CRC32 as needed
 
-Each tool is a command-line utility. See comments in each file for TODOs.
+
+## Usage
+
+Each tool is a command-line utility. Build them using the main CMake project or individually as needed. Run with appropriate arguments for asset conversion or packing tasks.
+
+## Contributing
+
+To contribute a new asset tool or feature:
+- Add your C++ source file to this folder.
+- Update this README with a description of your tool.
+- Follow the code style and comment TODOs for clarity.

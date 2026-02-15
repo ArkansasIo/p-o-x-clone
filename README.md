@@ -67,9 +67,30 @@ int main(int argc, char* argv[]) {
 - All features are covered by unit tests in `tests/`
 - Run tests with `build/tests/Debug/pox_tests.exe`
 
-## Build & Run
-1. Build with CMake tasks
-2. Run tests and main executable
+
+## Build Instructions
+
+1. Install [SDL2](https://www.libsdl.org/) development libraries.
+2. Clone this repository.
+3. Run CMake to configure and build:
+    ```sh
+    cmake -S . -B build
+    cmake --build build
+    ```
+4. Run the desktop SDL app from `build/apps/desktop_sdl/`.
+
+## Directory Structure
+
+- `src/` - Core engine source code
+- `apps/` - Example and platform-specific frontends
+- `assets/` - Game assets (ROMs, fonts, packs, skins)
+- `docs/` - Technical and design documentation
+- `tools/` - Asset and ROM tools
+- `tests/` - Unit and regression tests
+
+## Contributing
+
+Contributions are welcome! Please see the [docs/README.md](docs/README.md) for documentation and guidelines.
 
 ## Contributing
 - Add new features via modular headers and source files

@@ -1,3 +1,11 @@
+
+
+
+#include "game_logic.hpp"
+#include <iostream>
+
+namespace pox::game {
+
 void GameLogic::pickupItem(int creatureId, const Equipment& item) {
     if (creatureId < 0 || creatureId >= creatures.size()) return;
     creatures[creatureId].inventory.add_item(item);
@@ -22,15 +30,13 @@ bool GameLogic::useHealingItemFromInventory(int creatureId, const std::string& i
     }
     return false;
 }
+
 // Main game logic implementation for RPG/MMORPG
 #include "game_logic.hpp"
 #include <iostream>
 
-namespace pox::game {
-
+// If you need to initialize currentBiome and currentZone, do it in the constructor:
 GameLogic::GameLogic() {
-    // Initialize game state, spawn default creatures, set biome/zone
-    creatures.clear();
     currentBiome = pox::world::biome_list[0];
     currentZone = pox::world::zone_list[0];
 }

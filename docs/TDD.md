@@ -1,3 +1,8 @@
+
+# POX Clone Technical Design Document (TDD)
+
+This document details the technical architecture, goals, and testing strategy for the PO-X Legacy Clone project. Use it as a reference for implementation and extension.
+
 # Dev Credit: Stephen Deline Jr
 # Technical Design Document (TDD) — PO-X Legacy Clone
 
@@ -48,5 +53,10 @@ Core objects:
 - Smoke tests for CPU stepping/bus integration
 - Add CPU instruction tests once ISA known (golden traces)
 
-## 8. Build
-- CMake + optional SDL frontend flag `POX_BUILD_SDL`
+
+## Build Instructions
+- Use CMake to configure and build the project.
+- Enable the SDL frontend with the `POX_BUILD_SDL` flag if desired.
+
+## Contributing to the TDD
+To suggest technical changes or improvements, please update this document and submit a pull request with your rationale.

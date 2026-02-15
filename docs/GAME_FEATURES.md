@@ -12,12 +12,11 @@ This document summarizes the main features of the PO-X clone game and emulator p
 - ROM container format (POXR)
 - Homebrew SDK and example projects
 
-## Planned/Future Features
-- Save states and rewind
-- GUI debugger
-- Sprite/tile/audio converters
-- Hardware build guide
-- UI skin/theme system
-- Advanced audio (PSG, PWM)
-- Realistic LCD timing
-- FPGA/embedded ports
+
+## Usage
+
+Refer to this document to understand the current and planned capabilities of the PO-X Clone platform. Use the features listed above to guide development, testing, and gameplay.
+
+## Contributing Features
+
+To propose or add a new feature, please update this document and submit a pull request with your changes and rationale.

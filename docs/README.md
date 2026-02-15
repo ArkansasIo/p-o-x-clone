@@ -30,6 +30,11 @@
 
 
 
+
+# POX Clone Documentation Index
+
+Welcome to the POX Clone documentation. This folder contains technical and design documents for developers, contributors, and users. Use this index to navigate the available resources.
+
 # Documentation Index
 
 - GDD.md — Game Design Document
@@ -46,4 +51,6 @@
 - SAVE_STATES_REWIND.md — save states + rewind design
 - REVERSE_ENGINEERING.md — practical RE notes
 - HOMEBREW_SDK.md — SDK layout and workflow
-# Dev Credit: Stephen Deline Jr
+
+---
+Dev Credit: Stephen Deline Jr

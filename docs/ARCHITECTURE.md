@@ -1,3 +1,8 @@
+
+# POX Clone Architecture Overview
+
+This document describes the core architecture and design principles of the POX Clone emulator and game engine. It is intended for developers and contributors seeking to understand or extend the system.
+
 # Dev Credit: Stephen Deline Jr
 # Architecture (PO-X Clone Scaffold)
 
@@ -27,9 +32,12 @@
 3. Render display from VRAM
 4. Drain audio to frontend
 
-## Where real hardware goes
-- `cpu8.cpp`: opcode decode + flags + addressing modes
-- `bus.cpp`: memory map + IO addresses
-- `display.cpp`: VRAM format + scanline timing
-- `timer.cpp`: correct divisors + interrupt behavior
-- `cartridge.cpp`: correct mapper + save mechanism
+
+## Extending the Architecture
+- To add new hardware features, implement or extend the relevant component in `src/pox/hw/` or `src/pox/core/`.
+- For new CPU instructions, update `cpu8.cpp` and its decode table.
+- For new memory maps or IO, modify `bus.cpp`.
+- For display or timing changes, see `display.cpp` and `timer.cpp`.
+- For cartridge or save changes, see `cartridge.cpp`.
+
+For more details, see related documents in this folder.

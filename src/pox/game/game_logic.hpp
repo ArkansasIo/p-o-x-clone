@@ -1,7 +1,4 @@
-    // Inventory and item management
-    void pickupItem(int creatureId, const Equipment& item);
-    bool equipFromInventory(int creatureId, const std::string& itemName);
-    bool useHealingItemFromInventory(int creatureId, const std::string& itemName);
+// Header for main game logic
 // Header for main game logic
 #pragma once
 #include <vector>
@@ -22,6 +19,10 @@ namespace game {
 
 class GameLogic {
 public:
+    // Inventory and item management
+    void pickupItem(int creatureId, const Equipment& item);
+    bool equipFromInventory(int creatureId, const std::string& itemName);
+    bool useHealingItemFromInventory(int creatureId, const std::string& itemName);
     GameLogic();
     void tick();
     void spawnCreature(const std::string& name);
