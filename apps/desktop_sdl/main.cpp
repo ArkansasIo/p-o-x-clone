@@ -95,14 +95,26 @@ int main(int argc, char** argv) {
     // Draw GUI and PI buttons overlay
     SDL_Renderer* ren = video.ren;
     SDL_SetRenderDrawBlendMode(ren, SDL_BLENDMODE_BLEND);
+    // Draw GUI/PI buttons with labels and hover effect
     for (int i = 0; i < 2; ++i) {
       if (gui_button_hover == i)
-        SDL_SetRenderDrawColor(ren, 200, 200, 255, 180);
+        SDL_SetRenderDrawColor(ren, 200, 200, 255, 220);
       else
         SDL_SetRenderDrawColor(ren, 180, 180, 180, 180);
       SDL_RenderFillRect(ren, &gui_buttons[i]);
       SDL_SetRenderDrawColor(ren, 60, 60, 60, 255);
       SDL_RenderDrawRect(ren, &gui_buttons[i]);
+      // Draw label (simple, top-left)
+      SDL_Surface* label_surf = SDL_CreateRGBSurfaceWithFormat(0, 120, 20, 32, SDL_PIXELFORMAT_RGBA32);
+      SDL_FillRect(label_surf, NULL, SDL_MapRGBA(label_surf->format, 0,0,0,0));
+      // For real UI, use SDL_ttf; here, just a placeholder color bar
+      SDL_Rect bar = {0, 0, 120, 20};
+      SDL_FillRect(label_surf, &bar, SDL_MapRGBA(label_surf->format, 100, 100, 200, 180));
+      SDL_Texture* label_tex = SDL_CreateTextureFromSurface(ren, label_surf);
+      SDL_Rect dst = {gui_buttons[i].x, gui_buttons[i].y, 120, 20};
+      SDL_RenderCopy(ren, label_tex, NULL, &dst);
+      SDL_DestroyTexture(label_tex);
+      SDL_FreeSurface(label_surf);
     }
 
     // PI interface panel overlay
@@ -112,17 +124,58 @@ int main(int argc, char** argv) {
       SDL_RenderFillRect(ren, &pi_panel);
       SDL_SetRenderDrawColor(ren, 40, 80, 120, 255);
       SDL_RenderDrawRect(ren, &pi_panel);
-      // Placeholder controls: 2 rectangles for PI actions
-      SDL_Rect pi_btn1 = {340, 50, 200, 40};
-      SDL_Rect pi_btn2 = {340, 110, 200, 40};
-      SDL_SetRenderDrawColor(ren, 180, 220, 240, 200);
-      SDL_RenderFillRect(ren, &pi_btn1);
-      SDL_RenderFillRect(ren, &pi_btn2);
-      SDL_SetRenderDrawColor(ren, 40, 80, 120, 255);
-      SDL_RenderDrawRect(ren, &pi_btn1);
-      SDL_RenderDrawRect(ren, &pi_btn2);
-      // Print to console for demo
-      std::printf("[PI PANEL] Displayed PI interface controls\n");
+      // PI controls with hover effect and labels
+      SDL_Rect pi_btns[2] = {{340, 50, 200, 40}, {340, 110, 200, 40}};
+      const char* pi_labels[2] = {"PI Action 1", "PI Action 2"};
+      int pi_hover = -1;
+      int mx, my;
+      SDL_GetMouseState(&mx, &my);
+      for (int i = 0; i < 2; ++i) {
+        if (mx >= pi_btns[i].x && mx < pi_btns[i].x + pi_btns[i].w && my >= pi_btns[i].y && my < pi_btns[i].y + pi_btns[i].h)
+          pi_hover = i;
+      }
+      for (int i = 0; i < 2; ++i) {
+        if (pi_hover == i)
+          SDL_SetRenderDrawColor(ren, 220, 240, 255, 230);
+        else
+          SDL_SetRenderDrawColor(ren, 180, 220, 240, 200);
+        SDL_RenderFillRect(ren, &pi_btns[i]);
+        SDL_SetRenderDrawColor(ren, 40, 80, 120, 255);
+        SDL_RenderDrawRect(ren, &pi_btns[i]);
+        // Label placeholder
+        SDL_Surface* pi_label_surf = SDL_CreateRGBSurfaceWithFormat(0, 200, 20, 32, SDL_PIXELFORMAT_RGBA32);
+        SDL_FillRect(pi_label_surf, NULL, SDL_MapRGBA(pi_label_surf->format, 0,0,0,0));
+        SDL_Rect bar = {0, 0, 200, 20};
+        SDL_FillRect(pi_label_surf, &bar, SDL_MapRGBA(pi_label_surf->format, 120, 180, 220, 180));
+        SDL_Texture* pi_label_tex = SDL_CreateTextureFromSurface(ren, pi_label_surf);
+        SDL_Rect dst = {pi_btns[i].x, pi_btns[i].y, 200, 20};
+        SDL_RenderCopy(ren, pi_label_tex, NULL, &dst);
+        SDL_DestroyTexture(pi_label_tex);
+        SDL_FreeSurface(pi_label_surf);
+      }
+      // Tooltip for hovered PI button
+      if (pi_hover != -1) {
+        SDL_Rect tip = {pi_btns[pi_hover].x, pi_btns[pi_hover].y + 45, 180, 24};
+        SDL_SetRenderDrawColor(ren, 255, 255, 200, 220);
+        SDL_RenderFillRect(ren, &tip);
+        SDL_SetRenderDrawColor(ren, 80, 80, 40, 255);
+        SDL_RenderDrawRect(ren, &tip);
+        // Placeholder: no real text rendering
+      }
+      // Only print once when panel is toggled on
+      static bool pi_panel_last = false;
+      if (!pi_panel_last && pi_panel_visible) {
+        std::printf("[PI PANEL] Displayed PI interface controls\n");
+      }
+      pi_panel_last = pi_panel_visible;
+    }
+    // Status bar
+    SDL_Rect status = {0, 0, 600, 18};
+    SDL_SetRenderDrawColor(ren, 30, 30, 30, 220);
+    SDL_RenderFillRect(ren, &status);
+    SDL_SetRenderDrawColor(ren, 200, 200, 200, 255);
+    SDL_RenderDrawRect(ren, &status);
+    // Placeholder: no real text rendering
     }
     SDL_RenderPresent(ren);
 

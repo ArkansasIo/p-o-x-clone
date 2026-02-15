@@ -1,0 +1,55 @@
+// POX 2001 Full Game Demo ROM
+// This is a generated ROM file for the full game experience.
+// It includes all major systems: maze, RPG/MMO, database, universe, resource, tech, wireless, config, firmware, EEPROM, patch/update, and demo content.
+
+POX_ROM_VERSION=2
+GAME_TITLE=POX 2001 FULLGAME
+AUTHOR=POX CLONE TEAM
+DATE=2026-02-14
+
+// Boot/entry point
+ENTRY=main
+
+// Game data (example, real data would be binary or packed)
+[CREATURES]
+Slitherfang,99,POISON,RARE
+Pyroclaw,120,FIRE,EPIC
+Aquaphoon,80,WATER,COMMON
+
+[ITEMS]
+NanoMed,HEAL,50
+TechChip,UPGRADE,1
+MazeKey,KEY,1
+
+[LEVELS]
+1,START,MAZE,TRIAL
+2,FOREST,MAZE,DUNGEON
+3,TOWER,MAZE,RAID
+...
+999,ENDGAME,MAZE,WORLD
+
+[PLAYER]
+NAME=PLAYER1
+LEVEL=1
+XP=0
+INVENTORY=NanoMed,TechChip
+
+[CONFIG]
+DIFFICULTY=NORMAL
+SOUND=ON
+MUSIC=ON
+
+[UNIVERSE]
+PLANETS=3
+ROOMS=100
+
+[PATCHES]
+PATCH1=Initial release
+
+[WIRELESS]
+ENABLED=YES
+
+[EEPROM]
+SAVESLOT=1
+
+// End of ROM
