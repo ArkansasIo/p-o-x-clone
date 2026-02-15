@@ -21,7 +21,7 @@ int main(int argc, char** argv) {
     std::string cmd = argv[1], file = argv[2];
     if (cmd == "dump") {
         std::ifstream f(file, std::ios::binary);
-        std::array<uint8_t, 20> data{};
+        std::array<uint8_t, 36> data{};
         f.read((char*)data.data(), 20);
         auto rec = CreatureRecord::deserialize(data);
         std::cout << "Head: " << int(rec.head_id) << " HP: " << int(rec.head_hp) << "\n";
@@ -35,7 +35,7 @@ int main(int argc, char** argv) {
         std::cout << "CRC valid: " << (rec.validate_crc() ? "yes" : "no") << "\n";
     } else if (cmd == "validate") {
         std::ifstream f(file, std::ios::binary);
-        std::array<uint8_t, 20> data{};
+        std::array<uint8_t, 36> data{};
         f.read((char*)data.data(), 20);
         auto rec = CreatureRecord::deserialize(data);
         std::cout << (rec.validate_crc() ? "Valid\n" : "Invalid\n");
@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
             return 1;
         }
         std::ifstream f(file, std::ios::binary);
-        std::array<uint8_t, 20> data{};
+        std::array<uint8_t, 36> data{};
         f.read((char*)data.data(), 20);
         auto rec = CreatureRecord::deserialize(data);
         rec.fix_crc();

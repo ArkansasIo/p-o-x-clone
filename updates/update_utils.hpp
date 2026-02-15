@@ -1,3 +1,3 @@
 #pragma once
-// Update utility header
-void download_update();
+// Update utility header (disabled)
+// void download_update();

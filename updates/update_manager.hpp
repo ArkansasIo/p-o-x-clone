@@ -1,3 +1,3 @@
 #pragma once
-// Update manager header
-void check_for_updates();
+// Update manager header (disabled)
+// void check_for_updates();

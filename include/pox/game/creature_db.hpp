@@ -13,6 +13,7 @@ public:
     CreatureRecord& slot(size_t i);
     const CreatureRecord& slot(size_t i) const;
     size_t slot_count() const;
+    static constexpr size_t record_size = 36;
 private:
     std::vector<CreatureRecord> slots_;
 };

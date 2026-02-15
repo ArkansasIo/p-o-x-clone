@@ -7,9 +7,8 @@
 #include "pox/game/zones.hpp"
 #include "pox/game/settings.hpp"
 #include <SDL.h>
-#include <SDL_scancode.h>
+#include "../../SDL2/SDL2-2.30.2/include/SDL_scancode.h"
 #include "pox/game/kingdoms.hpp"
-using pox::game::initialize_kingdoms;
 #include "pox/game/continents.hpp"
 #include "pox/game/rpg_systems.hpp"
 #include "pox/ui/menu_renderer.hpp"
@@ -39,7 +38,7 @@ int main(int argc, char** argv) {
 
     pox::game::ZoneSystem zoneSys;
     pox::game::KingdomSystem kingdomSys;
-    pox::game::initialize_kingdoms(kingdomSys);
+    // pox::game::initialize_kingdoms(kingdomSys); // Removed: function does not exist
     pox::game::WorldMap worldMap;
     worldMap.initialize();
     pox::game::SettingsSystem settingsSys;

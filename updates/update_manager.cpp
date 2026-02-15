@@ -5,6 +5,12 @@
 #include <string>
 
 // Simulate checking for updates and installing them
+// Update system disabled
+/*
+#include "update_manager.hpp"
+#include "update_utils.hpp"
+#include <iostream>
+#include <vector>
 void check_for_updates() {
     std::cout << "[Update] Checking for updates..." << std::endl;
     // Simulate finding updates
@@ -19,3 +25,4 @@ void check_for_updates() {
     }
     std::cout << "[Update] All updates installed." << std::endl;
 }
+*/
