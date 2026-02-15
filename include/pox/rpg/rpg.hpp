@@ -9,12 +9,13 @@ namespace pox::rpg {
 struct Character {
     uint32_t id;
     std::string name;
-    int level;
+    int level; // 1-999
     int exp;
     int hp, maxHp;
     int attack, defense, speed, special;
     std::vector<uint32_t> equipment;
     std::vector<uint32_t> skills;
+    void clampLevel() { if (level < 1) level = 1; if (level > 999) level = 999; }
 };
 
 struct Party {

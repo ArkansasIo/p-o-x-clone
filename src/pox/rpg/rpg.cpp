@@ -11,12 +11,17 @@ Character createCharacter(const std::string& name) {
 }
 void gainExperience(Character& c, int amount) {
     c.exp += amount;
+    if (c.level < 999 && c.exp >= 100 * c.level) { // Example exp curve
+        levelUp(c);
+    }
+    c.clampLevel();
 }
 void levelUp(Character& c) {
-    ++c.level;
+    if (c.level < 999) ++c.level;
     c.exp = 0;
     c.maxHp += 10;
     c.hp = c.maxHp;
+    c.clampLevel();
 }
 void equipItem(Character& c, uint32_t itemId) {
     c.equipment.push_back(itemId);
