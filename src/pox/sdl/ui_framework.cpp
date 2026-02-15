@@ -108,21 +108,70 @@ void runGameLoop(SDL_Renderer* ren) {
     SDL_Delay(1200);
     MainMenu menu;
     bool inMenu = true;
-    while (inMenu) {
-        SDL_Event e;
-        while (SDL_PollEvent(&e)) {
-            if (e.type == SDL_QUIT) inMenu = false;
-            menu.handleInput(e);
-            if (e.type == SDL_KEYDOWN && e.key.keysym.scancode == SDL_SCANCODE_RETURN) {
-                if (menu.selected == 0) inMenu = false; // Start Game
-                if (menu.selected == 3) inMenu = false; // Exit
+    bool running = true;
+    while (running) {
+        // Main menu loop
+        while (inMenu) {
+            SDL_Event e;
+            while (SDL_PollEvent(&e)) {
+                if (e.type == SDL_QUIT) { inMenu = false; running = false; }
+                menu.handleInput(e);
+                if (e.type == SDL_KEYDOWN && e.key.keysym.scancode == SDL_SCANCODE_RETURN) {
+                    if (menu.selected == 0) { inMenu = false; /* Start Game */ }
+                    else if (menu.selected == 1) { // Load Game
+                        std::vector<std::string> slots = {"Slot 1", "Slot 2", "Slot 3", "Back"};
+                        SubMenu loadMenu(slots);
+                        bool inSub = true;
+                        while (inSub) {
+                            SDL_Event sube;
+                            while (SDL_PollEvent(&sube)) {
+                                if (sube.type == SDL_QUIT) { inSub = false; running = false; }
+                                loadMenu.handleInput(sube);
+                                if (sube.type == SDL_KEYDOWN && (sube.key.keysym.scancode == SDL_SCANCODE_ESCAPE || sube.key.keysym.scancode == SDL_SCANCODE_RETURN)) {
+                                    if (loadMenu.selected == 3 || sube.key.keysym.scancode == SDL_SCANCODE_ESCAPE) inSub = false; // Back
+                                    else if (sube.key.keysym.scancode == SDL_SCANCODE_RETURN) {
+                                        std::cout << "[Menu] Load slot: " << loadMenu.submenu_items[loadMenu.selected] << std::endl;
+                                        // TODO: Add actual load logic here
+                                    }
+                                }
+                            }
+                            loadMenu.show(ren);
+                            SDL_Delay(16);
+                        }
+                    }
+                    else if (menu.selected == 2) { // Options
+                        std::vector<std::string> opts = {"Audio", "Video", "Controls", "Back"};
+                        SubMenu optMenu(opts);
+                        bool inSub = true;
+                        while (inSub) {
+                            SDL_Event sube;
+                            while (SDL_PollEvent(&sube)) {
+                                if (sube.type == SDL_QUIT) { inSub = false; running = false; }
+                                optMenu.handleInput(sube);
+                                if (sube.type == SDL_KEYDOWN && (sube.key.keysym.scancode == SDL_SCANCODE_ESCAPE || sube.key.keysym.scancode == SDL_SCANCODE_RETURN)) {
+                                    if (optMenu.selected == 3 || sube.key.keysym.scancode == SDL_SCANCODE_ESCAPE) inSub = false; // Back
+                                    else if (sube.key.keysym.scancode == SDL_SCANCODE_RETURN) {
+                                        std::cout << "[Menu] Option selected: " << optMenu.submenu_items[optMenu.selected] << std::endl;
+                                        // TODO: Add actual option logic here
+                                    }
+                                }
+                            }
+                            optMenu.show(ren);
+                            SDL_Delay(16);
+                        }
+                    }
+                    else if (menu.selected == 3) { inMenu = false; running = false; /* Exit */ }
+                }
             }
+            menu.show(ren);
+            SDL_Delay(16);
         }
-        menu.show(ren);
-        SDL_Delay(16);
+        if (running) {
+            // ...start main game logic here...
+            std::cout << "Game started!" << std::endl;
+            running = false; // For now, exit after starting game
+        }
     }
-    // ...start main game logic here...
-    std::cout << "Game started!" << std::endl;
 }
 
 } // namespace pox_sdl

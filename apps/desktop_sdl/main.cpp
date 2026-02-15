@@ -176,7 +176,6 @@ int main(int argc, char** argv) {
     SDL_SetRenderDrawColor(ren, 200, 200, 200, 255);
     SDL_RenderDrawRect(ren, &status);
     // Placeholder: no real text rendering
-    }
     SDL_RenderPresent(ren);
 
     // Debug: print framebuffer summary
@@ -197,9 +196,8 @@ int main(int argc, char** argv) {
     if (dt < frame_ms) SDL_Delay(frame_ms - dt);
   }
 
-  // Persist save RAM
+  // Persist save RAM and shutdown after main loop
   m.save_sram();
-
   audio.shutdown();
   video.shutdown();
   SDL_Quit();
