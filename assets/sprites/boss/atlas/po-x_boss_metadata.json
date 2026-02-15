@@ -1,0 +1,13 @@
+# PO-X Boss Sprite Metadata
+{
+  "sprites": [
+    {"id": "BOS_000", "size": "24x24", "category": "boss", "atlas_x": 0, "atlas_y": 0, "bpp": 2, "frames": 1},
+    {"id": "BOS_001", "size": "24x24", "category": "boss", "atlas_x": 1, "atlas_y": 0, "bpp": 2, "frames": 1},
+    // ... 46 more ...
+    {"id": "BOS_047", "size": "24x24", "category": "boss", "atlas_x": 7, "atlas_y": 5, "bpp": 2, "frames": 1}
+  ],
+  "atlas": "po-x_boss_atlas.png",
+  "bin_1bpp": "po-x_boss_1bpp.bin",
+  "bin_2bpp": "po-x_boss_2bpp.bin",
+  "index": "po-x_boss.pox1"
+}

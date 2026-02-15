@@ -1,0 +1,12 @@
+# PO-X Animation Sprite Metadata
+{
+  "animations": [
+    {"id": "ANM_000", "size": "8x8", "category": "animation", "frames": 4, "atlas_x": 0, "atlas_y": 0, "bpp": 2, "index": "po-x_anim_000.pox1"},
+    {"id": "ANM_001", "size": "8x8", "category": "animation", "frames": 4, "atlas_x": 1, "atlas_y": 0, "bpp": 2, "index": "po-x_anim_001.pox1"},
+    // ... 118 more ...
+    {"id": "ANM_119", "size": "8x8", "category": "animation", "frames": 4, "atlas_x": 29, "atlas_y": 3, "bpp": 2, "index": "po-x_anim_119.pox1"}
+  ],
+  "atlas": "po-x_anim_atlas.png",
+  "bin_1bpp": "po-x_anim_1bpp.bin",
+  "bin_2bpp": "po-x_anim_2bpp.bin"
+}

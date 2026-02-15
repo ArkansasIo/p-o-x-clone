@@ -1,0 +1,13 @@
+# PO-X Elite Sprite Metadata
+{
+  "sprites": [
+    {"id": "ELT_000", "size": "16x16", "category": "elite", "atlas_x": 0, "atlas_y": 0, "bpp": 2, "frames": 1},
+    {"id": "ELT_001", "size": "16x16", "category": "elite", "atlas_x": 1, "atlas_y": 0, "bpp": 2, "frames": 1},
+    // ... 126 more ...
+    {"id": "ELT_127", "size": "16x16", "category": "elite", "atlas_x": 15, "atlas_y": 7, "bpp": 2, "frames": 1}
+  ],
+  "atlas": "po-x_elite_atlas.png",
+  "bin_1bpp": "po-x_elite_1bpp.bin",
+  "bin_2bpp": "po-x_elite_2bpp.bin",
+  "index": "po-x_elite.pox1"
+}

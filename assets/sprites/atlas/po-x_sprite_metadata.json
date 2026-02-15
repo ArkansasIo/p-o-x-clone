@@ -1,0 +1,72 @@
+{
+  "sprites": [
+    {
+      "id": "ENM_000",
+      "category": "enemy",
+      "size": "8x8",
+      "atlas_x": 0,
+      "atlas_y": 0,
+      "frames": 2,
+      "variant": "micro-parasite"
+    },
+    {
+      "id": "ENM_001",
+      "category": "enemy",
+      "size": "8x8",
+      "atlas_x": 1,
+      "atlas_y": 0,
+      "frames": 2,
+      "variant": "void-crawler"
+    },
+    {
+      "id": "ENM_002",
+      "category": "enemy",
+      "size": "8x8",
+      "atlas_x": 2,
+      "atlas_y": 0,
+      "frames": 2,
+      "variant": "pulse-drone"
+    },
+    {
+      "id": "ENM_003",
+      "category": "enemy",
+      "size": "8x8",
+      "atlas_x": 3,
+      "atlas_y": 0,
+      "frames": 2,
+      "variant": "bio-slime"
+    },
+    {
+      "id": "ENM_004",
+      "category": "enemy",
+      "size": "8x8",
+      "atlas_x": 4,
+      "atlas_y": 0,
+      "frames": 2,
+      "variant": "nano-swarm"
+    },
+    // ... 994 more sprite entries ...
+    {
+      "id": "UI_998",
+      "category": "ui",
+      "size": "8x8",
+      "atlas_x": 36,
+      "atlas_y": 26,
+      "frames": 1,
+      "variant": "interface"
+    }
+  ],
+  "atlas": {
+    "micro": "po-x_micro_atlas.png",
+    "elite": "po-x_elite_atlas.png",
+    "boss": "po-x_boss_atlas.png"
+  },
+  "palette": ["transparent", "light", "medium", "dark"],
+  "frame_rules": {
+    "idle": 2,
+    "move": 2,
+    "attack": 2,
+    "hit": 1,
+    "death": 3
+  }
+}
